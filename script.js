@@ -2,20 +2,11 @@
 
 //Page load event listener for carousel.......................
 
-
-// $(document).ready(function(){
-//     $('.carousel').carousel();
-//   });
-
-//   $('.carousel.carousel-slider').carousel({
-//     fullWidth: true
-//   });
-
 $(document).ready(function(){
   $('.slider').slider();
 });
 
-
+//Slider methods controling each slider class..................
 // Pause slider
 $('.slider').slider('pause');
 // Start slider
@@ -24,6 +15,12 @@ $('.slider').slider('start');
 $('.slider').slider('next');
 // Previous slide
 $('.slider').slider('prev');
+
+//Methods for tunring the fixed menu on and off................
+$('.fixed-action-btn').openFAB();
+$('.fixed-action-btn').closeFAB();
+$('.fixed-action-btn.toolbar').openToolbar();
+$('.fixed-action-btn.toolbar').closeToolbar();
       
 
 
