@@ -7,6 +7,7 @@
       <!--Import materialize.css-->
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" src="style.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
@@ -30,6 +31,8 @@
           </div>
         </nav>    
       <!------------------------------------Carousel-------------------------------------------------------------------->
+        
+      <!-------------------------STILL NEED TO ADD A CARD OR TOAST OR SOMETHIGN TO TELL USER WHAT TO DO------------------>
       <div class="slider">
         <ul class="slides">
             <li>
@@ -57,14 +60,32 @@
       </div>
       <!------------------------------------Main Container---------------------------------------------------------------->
       <div class="container">
-         <!-----------------Main Divs for dynamically inserted features wrapped in main div-------------------------------->
-         <div class="row justify-content-center">
+      <!-----------------Info promting the user to make their selection below--------------------------------------------->
+      <div class="container center">
+        <a href="#!" class="btn-large" onclick="Materialize.showStaggeredList('#staggered-test')">Click Me</a>
+      </div>
+      <!-----------------Main Divs for dynamically inserted features wrapped in main div----------------------------------->
+        <div class="row justify-content-center">
+          <div class="col s12 m12">
+            <div class="card z-depth-4">
+              <div class="card-image">
+                <img src="https://images.theconversation.com/files/249331/original/file-20181206-128208-1lepxpi.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip">
+                <span class="card-title"><h3>Salmon</h3></span>
+                <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
             <div class="col s12 m12">
               <div class="card z-depth-4">
                 <div class="card-image">
-                  <img src="https://images.theconversation.com/files/249331/original/file-20181206-128208-1lepxpi.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip">
-                  <span class="card-title"><h3>Salmon</h3></span>
-                  <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
+                  <img src="https://postmediacalgarysun.files.wordpress.com/2018/03/steak-e1521203333221.jpg">
+                  <span class="card-title"><h3>Beef</h3></span>
+                  <a class="btn-floating btn-large btn waves-effect waves-red halfway-fab cyan pulse"><i class="material-icons">add</i></a>
                 </div>
                 <div class="card-content">
                   <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
@@ -76,9 +97,9 @@
               <div class="col s12 m12">
                 <div class="card z-depth-4">
                   <div class="card-image">
-                    <img src="https://postmediacalgarysun.files.wordpress.com/2018/03/steak-e1521203333221.jpg">
-                    <span class="card-title"><h3>Beef</h3></span>
-                    <a class="btn-floating btn-large btn waves-effect waves-red halfway-fab cyan pulse"><i class="material-icons">add</i></a>
+                    <img src="https://www.feastingathome.com/wp-content/uploads/2019/03/Szechuan-Tofu-and-Veggies-107.jpg">
+                    <span class="card-title"><h3>Tofu</h3></span>
+                    <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
                   </div>
                   <div class="card-content">
                     <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
@@ -86,20 +107,6 @@
                 </div>
               </div>
             </div>
-            <div class="row">
-                <div class="col s12 m12">
-                  <div class="card z-depth-4">
-                    <div class="card-image">
-                      <img src="https://www.feastingathome.com/wp-content/uploads/2019/03/Szechuan-Tofu-and-Veggies-107.jpg">
-                      <span class="card-title"><h3>Tofu</h3></span>
-                      <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
-                    </div>
-                    <div class="card-content">
-                      <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
       </div>
       <!---------------------------------------Footer--------------------------------------------------------------------------->
       <footer class="page-footer black">
@@ -114,9 +121,9 @@
                     <div class="row">
                       <div class="input-field col s12">
                         <input id="email" type="email" class="validate">
-                        <label for="email">Email</label>
+                       <label for="email">Email</label> <!------------------------CHANGE TEXT COLOR TO WHITE------------------->
                         <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                      </div>
+                      </div> <!-------------------------------ADD IN SOMETHING EXTERNAL DATA BASE FOR EMAIL CAPTURE---------------->
                     </div>
                   </form>
                 </div>
@@ -132,7 +139,7 @@
             </div>
           </div>
           <div class="footer-copyright">
-            <div class="container">
+            <div class="container text center">
             © 2014 Copyright Text
             <a class="grey-text text-lighten-4"></a>
             </div>
