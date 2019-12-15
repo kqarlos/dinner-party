@@ -3,15 +3,28 @@
 //Page load event listener for carousel.......................
 
 
+// $(document).ready(function(){
+//     $('.carousel').carousel();
+//   });
+
+//   $('.carousel.carousel-slider').carousel({
+//     fullWidth: true
+//   });
+
 $(document).ready(function(){
-    $('.carousel').carousel();
-  });
-
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true
-  });
+  $('.slider').slider();
+});
 
 
+// Pause slider
+$('.slider').slider('pause');
+// Start slider
+$('.slider').slider('start');
+// Next slide
+$('.slider').slider('next');
+// Previous slide
+$('.slider').slider('prev');
+      
 
 
 
