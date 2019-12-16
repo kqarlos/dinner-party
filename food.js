@@ -1,5 +1,12 @@
 $(document).ready(function(){
-    var search = "beef"
+
+    $(".card-image").click(function() {
+        $(".row").remove();
+        $(".container").append();
+        return false;
+    // });
+
+    var search = document.getElementById(click)
     var queryURL = "https://api.edamam.com/search?q=" + search + "&app_id=a9502a10&app_key=38e9596cea1782797a3e09245c9370fb&from=0&to=100";
     console.log(queryURL);
     
@@ -20,6 +27,8 @@ $(document).ready(function(){
         console.log(random);
         var foodImg = response.hits[random].recipe.image;
         var foodName = response.hits[random].recipe.label;
+        var recipe = response.hits[random].recipe.ingredientLines;
+
 
         var container = $("<div class='col s4'>");
         var foodContainer = $("<div class='card'>");
@@ -27,27 +36,36 @@ $(document).ready(function(){
         var foodImgEl = $("<img>");
         foodImgEl.attr("src", foodImg);
         var foodNameEl = $("<span class='card-title black-text'>");
+        var recipeEl = $("<p class='recipe'>");
 
 
-    foodNameEl.text(foodName);
+        foodNameEl.text(foodName);
+        foodImgDiv.append(foodImgEl, foodNameEl);
+        foodContainer.append(foodImgDiv);
+
+        container.append(foodContainer);
+
+        var detailContainer = $("div class='col s3 card'>");
 
 
 
-    foodImgDiv.append(foodImgEl, foodNameEl);
-    foodContainer.append(foodImgDiv);
-
-
-    container.append(foodContainer);
     
     //this appens to test.html.
     $("#test").append(container);
+
+    $(document).event
+    $(".card-image").click(function() {
+        $(".card").remove();
+        // $(".detailContainer").append();
+        return false;
+    });
     
     
 
-    // var recipeEl = $("<p class='recipe'>");
-    // var recipe = response.hits[i].recipe.ingredientLines;
         
     
     }
+    });
+
     });
 });
