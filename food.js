@@ -33,10 +33,13 @@ $(document).ready(function () {
             var randomNo = [];
             for (var i = 0; i < 6; i++) {
                 var random = Math.floor(Math.random() * 100);
-                // var genNumber = randomNo.indexOf(random);
-                // if (genNumber === -1) {
+                var genNumber = randomNo.indexOf(random);
+                if (genNumber === -1) {
                 randomNo.push(random);
-                // }
+                }
+                else {
+                    i--;
+                }
             }
 
             console.log(randomNo);
