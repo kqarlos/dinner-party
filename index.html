@@ -10,6 +10,7 @@
       <link rel="stylesheet" src="style.css">
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Dinner Party</title>
     </head>
 
     <body>
@@ -30,9 +31,7 @@
             </div>
           </div>
         </nav>    
-      <!------------------------------------Carousel-------------------------------------------------------------------->
-        
-      <!-------------------------STILL NEED TO ADD A CARD OR TOAST OR SOMETHIGN TO TELL USER WHAT TO DO------------------>
+      <!------------------------------------Slider-------------------------------------------------------------------->
       <div class="slider">
         <ul class="slides">
             <li>
@@ -52,37 +51,38 @@
           <li>
             <img src="Assets/slide2.png">
             <div class="caption right-align">
-              <h3>We That Easy!</h3>
-              <h5 class="light grey-text text-lighten-3">Simply pcik your main ingredient, dish, and then your off to the store!</h5>
+              <h3>Dinner Party Makes That Easy!</h3>
+              <h5 class="light grey-text text-lighten-3">Simply pick your main ingredient, dish of choice, and then your off to the store!</h5>
             </div>
           </li>
         </ul>
       </div>
       <!------------------------------------Main Container---------------------------------------------------------------->
-      <div class="container">
+    <!-------------------------STILL NEED TO ADD A CARD OR TOAST OR SOMETHIGN TO TELL USER WHAT TO DO------------------>
+    <div id='features' class="container">
       <!-----------------Info promting the user to make their selection below--------------------------------------------->
-      <div class="container center">
-        <a href="#!" class="btn-large" onclick="Materialize.showStaggeredList('#staggered-test')">Click Me</a>
-      </div>
+      <ul>
+          <li id="staggered-test"><h3 class="center-align">Select a Main Ingredient For Dinner.</h3></li>
+      </ul>
       <!-----------------Main Divs for dynamically inserted features wrapped in main div----------------------------------->
         <div class="row justify-content-center">
           <div class="col s12 m12">
-            <div class="card z-depth-4">
+            <div id="salmon" class="card hoverable z-depth-2">
               <div class="card-image">
                 <img src="https://images.theconversation.com/files/249331/original/file-20181206-128208-1lepxpi.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip">
                 <span class="card-title"><h3>Salmon</h3></span>
-                <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
-              </div>
-              <div class="card-content">
+                  <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
+                  </div>
+                <div class="card-content">
                 <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             <div class="col s12 m12">
-              <div class="card z-depth-4">
-                <div class="card-image">
+                <div id="card-fade" class="card hoverable z-depth-2">
+                <div id="beef" class="card-image">
                   <img src="https://postmediacalgarysun.files.wordpress.com/2018/03/steak-e1521203333221.jpg">
                   <span class="card-title"><h3>Beef</h3></span>
                   <a class="btn-floating btn-large btn waves-effect waves-red halfway-fab cyan pulse"><i class="material-icons">add</i></a>
@@ -93,9 +93,9 @@
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row justify-content-center">
               <div class="col s12 m12">
-                <div class="card z-depth-4">
+                  <div id="tofu" class="card hoverable z-depth-2">
                   <div class="card-image">
                     <img src="https://www.feastingathome.com/wp-content/uploads/2019/03/Szechuan-Tofu-and-Veggies-107.jpg">
                     <span class="card-title"><h3>Tofu</h3></span>
@@ -107,7 +107,35 @@
                 </div>
               </div>
             </div>
-      </div>
+          <div class="row justify-content-center">
+            <div class="col s12 m12">
+                <div id="shellfish" class="card hoverable z-depth-2">
+                <div class="card-image">
+                  <img src="https://images.unsplash.com/photo-1550065528-7dd6b266b245?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60">
+                  <span class="card-title"><h3>Shellfish</h3></span>
+                  <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+              <div class="col s12 m12">
+                  <div id="lentils" class="card hoverable z-depth-2">
+                  <div class="card-image">
+                    <img src="https://assets.bonappetit.com/photos/59baa8eba428681ad7c44f14/16:9/w_2560%2Cc_limit/lentils.jpg">
+                    <span class="card-title"><h3>Lentils</h3></span>
+                    <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i class="material-icons">add</i></a>
+                  </div>
+                  <div class="card-content">
+                    <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
       <!---------------------------------------Footer--------------------------------------------------------------------------->
       <footer class="page-footer black">
           <div class="container">
@@ -127,15 +155,6 @@
                     </div>
                   </form>
                 </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                </ul>
-              </div>
             </div>
           </div>
           <div class="footer-copyright">
@@ -153,3 +172,5 @@
       <script type="text/javascript" src="script.js"></script>
     </body>
   </html>
+
+
