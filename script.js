@@ -8,8 +8,6 @@ $(document).ready(function(){
 
 //Slider methods controling each slider class..................
 // Pause slider
-$('.slider').slider('pause');
-// Start slider
 $('.slider').slider('start');
 // Next slide
 $('.slider').slider('next');
