@@ -80,7 +80,7 @@ $(document).ready(function () {
                 // var row = $("<div>");
                 // row.addClass("row justify-content-center");
                 var column = $("<div>");
-                column.addClass("col s6");
+                column.addClass("col s12 m6");
                 var card = $("<div>");
                 card.addClass("choices card z-depth-4");
 
