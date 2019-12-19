@@ -33,8 +33,8 @@ Using Materialize CSS our basic layout for the content we are displaying to user
   <div class="col s12 m12">
     <div id="salmon" class="card hoverable z-depth-2">
       <div class="card-image">
-        <img src="https://images.theconversation.com/files>
-         <span class="card-title"><h3>Salmon</h3></span>
+        <img src="https://images.theconversation.com/files">
+         <span class="card-title" ><h3>Salmon</h3></span>
            <a class="btn-floating btn-large btn waves-effect 
            waves-red  halfway-fab cyan pulse"><i
            class="material-icons">add</i></a></div>
