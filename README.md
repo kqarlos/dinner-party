@@ -9,7 +9,7 @@ After they select their main dish Dinner Party returns the perfect cocktail pair
 
 
 ## Site Demo
-![site](https://media.giphy.com/media/LMR6hg0e0eTLVujUB8/giphy.gif)
+![Site](Assets/siteDemo.webp)
 
  
 ## Technologies Used
@@ -61,7 +61,7 @@ var column = $("<div>");
 column.addClass("col s12");
 ```
 
-![site](https://media.giphy.com/media/lqMd8zCm1ZpdnfS4sU/giphy.gif)
+![site](Assets/responsiveDemo.webp)
 
 ## API Call 
 Querying the information from the The Cocktail DB was done in two steps . First we get the drink ID based on spirit. Second we are parsing out the cocktail informaton that we will need for that particular spirit. 
@@ -177,12 +177,12 @@ function renderCocktail(drinkInfo) {
 - [Link to Github](https://github.com/cmelby)
 
 **Tai Le** 
-- [LinkedIn](#)
-- [Link to Github](#)
+- [LinkedIn](https://www.linkedin.com/in/tu-tai-le-2a9646139/)
+- [Link to Github](https://github.com/TaiLe96)
 
 **Carlos Toledo** 
-- [LinkedIn](#)
-- [Link to Github](#)
+- [LinkedIn](https://www.linkedin.com/in/carlos-toledo415/)
+- [Link to Github](https://github.com/kqarlos)
 
 
 Dinner Party Project

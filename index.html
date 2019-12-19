@@ -17,13 +17,6 @@
         <nav>
           <div class="nav-wrapper black">
             <a href="#" class="brand-logo center text">DINNER PARTY</a>
-            <form>
-              <div class="input-field">
-                <input id="search" type="search" required>
-                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                <i class="material-icons">close</i>
-              </div>
-            </form>
               <div class="fixed-action-btn horizontal">
                   <a class="btn-floating btn-large cyan">
                   <i class="large material-icons">menu</i>
@@ -150,11 +143,12 @@
                 <p class="grey-text text-lighten-4">Sign up to get weekly dinner and cocktail pairing ideas. We wont spam you, pinky promise!</p>
               </div>
               <div class="row">
-                  <form class="col s12">
+                  <form class="col s12 m6">
                     <div class="row">
-                      <div class="input-field col s12">
+                      <div class="input-field col s12 m6">
                         <input id="email" type="email" class="validate">
-                       <label for="email">Email</label> 
+                        <button id="enter" class="waves-effect waves-light btn">Enter</button>
+                       <label for="email">Email</label>
                         <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
                       </div> 
                     </div>
@@ -173,6 +167,10 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+      <!-- SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
       <script type="text/javascript" src="script.js"></script>
     </body>
   </html>
