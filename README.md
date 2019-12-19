@@ -9,7 +9,7 @@ After they select their main dish Dinner Party returns the perfect cocktail pair
 
 
 ## Site Demo
-![Alt Text](https://media.giphy.com/media/ZBKIrAyXhZlImLUPK6/giphy.gif)
+![Site](https://media.giphy.com/media/ZBKIrAyXhZlImLUPK6/giphy.gif)
 
  
 ## Technologies Used
