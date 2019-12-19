@@ -29,7 +29,7 @@
                 </ul>
             </div>
           </div>
-        </nav>    
+        </nav> 
       <!------------------------------------Slider-------------------------------------------------------------------->
       <div class="slider">
         <ul class="slides">
@@ -57,7 +57,6 @@
         </ul>
       </div>
       <!------------------------------------Main Container---------------------------------------------------------------->
-    <!-------------------------STILL NEED TO ADD A CARD OR TOAST OR SOMETHIGN TO TELL USER WHAT TO DO------------------>
     <div id='features' class="container">
       <!-----------------Info promting the user to make their selection below--------------------------------------------->
       <ul>
@@ -144,13 +143,14 @@
                 <p class="grey-text text-lighten-4">Sign up to get weekly dinner and cocktail pairing ideas. We wont spam you, pinky promise!</p>
               </div>
               <div class="row">
-                  <form class="col s12">
+                  <form class="col s12 m6">
                     <div class="row">
-                      <div class="input-field col s12">
+                      <div class="input-field col s12 m6">
                         <input id="email" type="email" class="validate">
-                       <label for="email">Email</label> <!------------------------CHANGE TEXT COLOR TO WHITE------------------->
+                        <button id="enter" class="waves-effect waves-light btn">Enter</button>
+                       <label for="email">Email</label>
                         <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>
-                      </div> <!-------------------------------ADD IN SOMETHING EXTERNAL DATA BASE FOR EMAIL CAPTURE---------------->
+                      </div> 
                     </div>
                   </form>
                 </div>
@@ -163,18 +163,14 @@
             </div>
           </div>
         </footer>
-
-      <!--JavaScript at end of body for optimized loading-->
-      
+      <!--JavaScript at end of body for optimized loading--> 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+      <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-app.js"></script>
+      <!-- SDKs for Firebase products that you want to use https://firebase.google.com/docs/web/setup#available-libraries -->
+      <script src="https://www.gstatic.com/firebasejs/7.6.1/firebase-analytics.js"></script>
       <script type="text/javascript" src="script.js"></script>
-      <script type="text/javascript" src="cocktail.js"></script>
-      <script type="text/javascript" src="food.js"></script>
-
-
     </body>
   </html>
-
-
