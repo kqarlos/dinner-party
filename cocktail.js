@@ -58,7 +58,7 @@ function renderCocktail(drinkInfo) {
 
     //Creating column to append to #choices row
     var column = $("<div>");
-    column.addClass("col s6 m6");
+    column.addClass("col s12 m6");
 
     //create card
     var card = $("<div>");
