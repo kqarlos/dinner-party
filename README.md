@@ -1,28 +1,45 @@
-# Dinner Party
+# Dinner Party 🌩️
+
+</br>
+<p align="center">
+    <img src="https://img.shields.io/github/languages/count/kqarlos/dinner-party?style=for-the-badge" alt="Languages" />
+    <img src="https://img.shields.io/github/languages/top/kqarlos/dinner-party?style=for-the-badge" alt="Top Language" />
+    <img src="https://img.shields.io/github/languages/code-size/kqarlos/dinner-party?style=for-the-badge" alt="Code Size" />
+    <img src="https://img.shields.io/github/repo-size/kqarlos/dinner-party?style=for-the-badge" alt="Repo Size" />   
+    <img src="https://img.shields.io/tokei/lines/github/kqarlos/dinner-party?style=for-the-badge" alt="Total Lines" />   
+    <img src="https://img.shields.io/github/last-commit/kqarlos/dinner-party?style=for-the-badge" alt="Last Commit" />  
+    <img src="https://img.shields.io/github/issues/kqarlos/dinner-party?style=for-the-badge" alt="Issues" />  
+    <img src="https://img.shields.io/github/followers/kqarlos?style=social" alt="Followers" />  
+</p>
 
 
-
-## Summary 
+## Description
 Dinner Party is an application that helps users get dish and drink ideas for for a dinner party that they are putting together. After selecting your main ingredient category, Dinner Party generates 6 dish ideas for the user to select. 
 After they select their main dish Dinner Party returns the perfect cocktail pairing along with its recipe and the recipe for the main dish. 
 
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#demo)
+* [Implementation](#implementation)
+* [Credits](#credits)
+* [License](#license)
 
 
-## Site Demo
+
+## Installation
+
+This application is compatible with the most commonly used web browsers.
+
+<p align="center">
+    <a href="https://kqarlos.github.io/dinner-party"><img src="https://img.shields.io/badge/-👉 See Live Site-success?style=for-the-badge"  alt="Live Site" /></a>
+</p>
+
+
+## Demo
 ![Site](./assets/images/siteDemo.webp)
 
- 
-## Technologies Used
-- Materialize CSS - Used to pull existing html and CSS for creating responsive organizational structer and styling for the site. In addtion, pulling from their JS library's built in scripts to utilize plugins for animations.
-- jQuery - Used for event listeners of parent and childeren elements as well as to store and recall those varible in local      storage to be displayed dynamically in HTML on the page.
-- momentjs - Used to pull current date for the current city.
-- javascript - Used to dynamically change html and store user-input.
-- HTML - Used to create elements on the DOM
-- CSS - Styles html elements on page
-- Git - Version control system to track changes to source code
-- GitHub - Hosts repository that can be deployed to GitHub Pages
- 
-
+## Implementation
 
 ## Grid Layout Code Snippet
 Using Materialize CSS our basic layout for the content we are displaying to user fits on cards, which sit within a column, which fits within a row. We leveraged materialize's predefined classes to style the UI in the way that we wanted and ensured resonivenss to different screensizes by specifying column widht on larg, medium, and small devices.
@@ -154,36 +171,57 @@ function renderCocktail(drinkInfo) {
 
 ```
 
+## Credits 
 
-## Built With
+### Authors
 
-* [EDEMAM API](https://developer.edamam.com/)
-* [The Cocktail DB API](https://www.thecocktaildb.com/api.php)
-* [Materialize CSS](http://archives.materializecss.com/0.100.2/about.html)
-* [jQuery](https://api.jquery.com/)
-* [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-* [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-* [Boostrap](https://getbootstrap.com/)
+- 💼 Carlos Toledo: [portfolio](https://professional-portfolio2020.herokuapp.com/)
+- :octocat: Github: [kqarlos](https://www.github.com/kqarlos)
+- LinkedIn: [carlos-toledo415](https://www.linkedin.com/in/carlos-toledo415/)
 
-## Authors
+<br />
 
+- Chris Melby
+- LinkedIn: [chris-melby-71106b126](https://www.linkedin.com/in/chris-melby-71106b126/)
+- :octocat: Github: [cmelby](https://github.com/cmelby)
 
-**Kevin Ko** 
-- [LinkedIn](#)
-- [Link to Github]()
+<br />
 
-**Chris Melby**
-- [LinkedIn](https://www.linkedin.com/in/chris-melby-71106b126/)
-- [Link to Github](https://github.com/cmelby)
+- Tai Le
+- LinkedIn: [tu-tai-le-2a9646139](https://www.linkedin.com/in/tu-tai-le-2a9646139/)
+- :octocat: Github: [TaiLe96](https://github.com/TaiLe96)
 
-**Tai Le** 
-- [LinkedIn](https://www.linkedin.com/in/tu-tai-le-2a9646139/)
-- [Link to Github](https://github.com/TaiLe96)
+<br />
 
-**Carlos Toledo** 
-- [LinkedIn](https://www.linkedin.com/in/carlos-toledo415/)
-- [Link to Github](https://github.com/kqarlos)
+- Kevin Ko 
 
 
-Dinner Party Project
-- [Link to Project](https://github.com/kokevin678/project1)
+### Built With
+    
+<p align="center">
+    <a href="https://developer.edamam.com/"><img src="https://img.shields.io/badge/-Moment.js-success?style=for-the-badge" alt="EDAMAM API" /></a>
+    <a href="https://www.thecocktaildb.com/api.php"><img src="https://img.shields.io/badge/-Open Weather API-success?style=for-the-badge" alt="The Cocktail DB API" /></a>
+    <a href="http://archives.materializecss.com/0.100.2/about.html"><img src="https://img.shields.io/badge/-Open Weather API-success?style=for-the-badge" alt="Materialize CSS" /></a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/-HTML-orange?style=for-the-badge"  alt="HMTL" /></a>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/-CSS-blue?style=for-the-badge" alt="CSS" /></a>
+    <a href="https://www.javascript.com/"><img src="https://img.shields.io/badge/-Javascript-yellow?style=for-the-badge" alt="Javascript" /></a>
+    <a href="https://jquery.com/"><img src="https://img.shields.io/badge/-JQuery-blue?style=for-the-badge" alt="JQuery" /></a>
+</p>
+</br>
+
+### Technologies Used
+- Materialize CSS - Used to pull existing html and CSS for creating responsive organizational structer and styling for the site. In addtion, pulling from their JS library's built in scripts to utilize plugins for animations.
+- jQuery - Used for event listeners of parent and childeren elements as well as to store and recall those varible in local      storage to be displayed dynamically in HTML on the page.
+- momentjs - Used to pull current date for the current city.
+- javascript - Used to dynamically change html and store user-input.
+- HTML - Used to create elements on the DOM
+- CSS - Styles html elements on page
+- Git - Version control system to track changes to source code
+- GitHub - Hosts repository that can be deployed to GitHub Pages
+
+
+## License
+
+<p align="center">
+    <img align="center" src="https://img.shields.io/github/license/kqarlos/dinner-party?style=for-the-badge" alt="MIT license" />
+</p>
