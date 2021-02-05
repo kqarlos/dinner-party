@@ -46,6 +46,10 @@ body{
   font-size: 2em;
 }
 
+.mb-0 {
+  margin-bottom: 0px;
+}
+
 @media only screen and (max-width: 600px) {
   #header1 {
     font-size: 3em;
