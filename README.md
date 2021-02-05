@@ -9,7 +9,7 @@ After they select their main dish Dinner Party returns the perfect cocktail pair
 
 
 ## Site Demo
-![Site](Assets/siteDemo.webp)
+![Site](./assets/images/siteDemo.webp)
 
  
 ## Technologies Used
@@ -61,7 +61,7 @@ var column = $("<div>");
 column.addClass("col s12");
 ```
 
-![site](Assets/responsiveDemo.webp)
+![site](./assets/images/responsiveDemo.webp)
 
 ## API Call 
 Querying the information from the The Cocktail DB was done in two steps . First we get the drink ID based on spirit. Second we are parsing out the cocktail informaton that we will need for that particular spirit. 
