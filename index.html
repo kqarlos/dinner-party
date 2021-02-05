@@ -12,7 +12,9 @@
   <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&family=Imbue:wght@300&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;700&family=Imbue:wght@300&display=swap"
+    rel="stylesheet">
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <!--Import materialize.css-->
@@ -28,7 +30,7 @@
   <nav id="banner">
     <a href="./index.html" class="brand-logo center text" id="header"><span class="material-icons">
         local_dining
-      </span>  DINNER PARTY  <span class="material-icons">
+      </span> DINNER PARTY <span class="material-icons">
         local_dining
       </span></a>
   </nav>
@@ -47,21 +49,21 @@
   <!------------------------------------Slider-------------------------------------------------------------------->
   <div class="slider">
     <ul class="slides">
-      <li>
+      <li class="slide">
         <img src="assets/images/slide1.png">
         <div class="caption left-align">
           <h2>Every Dinner</h2>
           <h3 class="light grey-text text-lighten-3">Should be a party.</h3>
         </div>
       </li>
-      <li>
+      <li class="slide">
         <img src="assets/images/slide3.png">
         <div class="caption center-align">
           <h3>Throw The Best Dinner Parties</h3>
           <h5 class="light grey-text text-lighten-3">By pairing the right drinks to go with the main course.</h5>
         </div>
       </li>
-      <li>
+      <li class="slide">
         <img src="assets/images/slide2.png">
         <div class="caption right-align">
           <h3>Dinner Party Makes That Easy!</h3>
@@ -81,7 +83,7 @@
     </ul>
     <!-----------------Main Divs for dynamically inserted features wrapped in main div----------------------------------->
     <div class="row justify-content-center">
-      <div class="col s12 m12">
+      <div class="col s12 m12 l6">
         <div id="salmon" class="card hoverable z-depth-2">
           <div class="card-image">
             <img src="./assets/images/salmon.jpg">
@@ -96,9 +98,7 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col s12 m12">
+      <div class="col s12 m12 l6">
         <div id="beef" class="card hoverable z-depth-2">
           <div class="card-image">
             <img src="./assets/images/beef.jpg">
@@ -114,42 +114,7 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center">
-      <div class="col s12 m12">
-        <div id="tofu" class="card hoverable z-depth-2">
-          <div class="card-image">
-            <img src="./assets/images/tofu.jpg">
-            <span class="card-title">
-              <h3>Tofu</h3>
-            </span>
-            <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i
-                class="material-icons">add</i></a>
-          </div>
-          <div class="card-content">
-            <p>For all those Sake lovers out there Tofu is an excellent option. In addtion many floral Gins and
-              flavorful vodkas offer paring options for this ingredient.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col s12 m12">
-        <div id="shellfish" class="card hoverable z-depth-2">
-          <div class="card-image">
-            <img src="./assets/images/shellfish.jpg">
-            <span class="card-title">
-              <h3>Shellfish</h3>
-            </span>
-            <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i
-                class="material-icons">add</i></a>
-          </div>
-          <div class="card-content">
-            <p>Gins, Vodkas, and whiskey's all envigorate the spirit of the south and are a great addition to a night of
-              seafood.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div class="row justify-content-center">
       <div class="col s12 m12">
         <div id="lentils" class="card hoverable z-depth-2">
@@ -168,6 +133,42 @@
         </div>
       </div>
     </div>
+
+    <div class="row justify-content-center">
+      <div class="col s12 m12 l6">
+        <div id="tofu" class="card hoverable z-depth-2">
+          <div class="card-image">
+            <img src="./assets/images/tofu.jpg">
+            <span class="card-title">
+              <h3>Tofu</h3>
+            </span>
+            <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i
+                class="material-icons">add</i></a>
+          </div>
+          <div class="card-content">
+            <p>For all those Sake lovers out there Tofu is an excellent option. In addtion many floral Gins and
+              flavorful vodkas offer paring options for this ingredient.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m12 l6">
+        <div id="shellfish" class="card hoverable z-depth-2">
+          <div class="card-image">
+            <img src="./assets/images/shellfish.jpg">
+            <span class="card-title">
+              <h3>Shellfish</h3>
+            </span>
+            <a class="btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse"><i
+                class="material-icons">add</i></a>
+          </div>
+          <div class="card-content">
+            <p>Gins, Vodkas, and whiskey's all envigorate the spirit of the south and are a great addition to a night of
+              seafood.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
   <!---------------------------------------Footer--------------------------------------------------------------------------->
   <footer class="page-footer black">
