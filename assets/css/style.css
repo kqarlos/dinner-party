@@ -23,13 +23,19 @@ body{
   z-index: 100;
 }
 
-#header {
+#header1 {
   font-size: 4em;
   letter-spacing: 3px;
-  /* font-family: 'Cormorant Garamond', serif; */
 }
+
+.slideHeader {
+  padding:30px; 
+  border-radius:100px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
 .slider{
-height: 550px !important;
+  height: 550px !important;
 }
 
 .slide {
