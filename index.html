@@ -2,35 +2,43 @@
 <html>
 
 <head>
-  <!--Import Google Icon Font-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!--Import materialize.css-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <link rel="stylesheet" src="./assets/css/style.css">
+
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
   <!--Let browser know website is optimized for mobile-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!--Import materialize.css-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css" />
+
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
   <title>Dinner Party</title>
 </head>
 
 <body>
   <!------------------------------------Header---------------------------------------------------------------------->
-  <nav>
-    <div class="nav-wrapper black">
-      <a href="#" class="brand-logo center text">DINNER PARTY</a>
-      <div class="fixed-action-btn horizontal">
-        <a class="btn-floating btn-large cyan">
-          <i class="large material-icons">menu</i>
-        </a>
-        <ul>
-          <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-          <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-          <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-          <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-        </ul>
-      </div>
+  <nav class="banner" id="banner">
+    <div class="nav-wrapper">
+      <a href="./index.html" class="brand-logo center text">DINNER PARTY</a>
     </div>
   </nav>
+
+  <!-- Fixed action menu button -->
+  <div class="fixed-action-btn horizontal">
+    <a class="btn-floating btn-large cyan">
+      <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
+      <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+      <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
+      <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+    </ul>
+  </div>
   <!------------------------------------Slider-------------------------------------------------------------------->
   <div class="slider">
     <ul class="slides">
@@ -72,7 +80,7 @@
         <div id="salmon" class="card hoverable z-depth-2">
           <div class="card-image">
             <img
-              src="https://images.theconversation.com/files/249331/original/file-20181206-128208-1lepxpi.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=926&fit=clip">
+              src="./assets/images/salmon.jpg">
             <span class="card-title">
               <h3>Salmon</h3>
             </span>
@@ -89,7 +97,8 @@
       <div class="col s12 m12">
         <div id="beef" class="card hoverable z-depth-2">
           <div class="card-image">
-            <img src="https://www.thespruceeats.com/thmb/APa5zYrExVw4fDRwChpwQGQuNls=/960x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/marinated-rump-roast-3058682-hero-01-0977a498722f47debaa7034c13053048.jpg">
+            <img
+              src="./assets/images/beef.jpg">
             <span class="card-title">
               <h3>Beef</h3>
             </span>
@@ -106,7 +115,7 @@
       <div class="col s12 m12">
         <div id="tofu" class="card hoverable z-depth-2">
           <div class="card-image">
-            <img src="https://www.feastingathome.com/wp-content/uploads/2019/03/Szechuan-Tofu-and-Veggies-107.jpg">
+            <img src="./assets/images/tofu.jpg">
             <span class="card-title">
               <h3>Tofu</h3>
             </span>
@@ -125,7 +134,7 @@
         <div id="shellfish" class="card hoverable z-depth-2">
           <div class="card-image">
             <img
-              src="https://images.unsplash.com/photo-1550065528-7dd6b266b245?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60">
+              src="./assets/images/shellfish.jpg">
             <span class="card-title">
               <h3>Shellfish</h3>
             </span>
@@ -143,7 +152,7 @@
       <div class="col s12 m12">
         <div id="lentils" class="card hoverable z-depth-2">
           <div class="card-image">
-            <img src="https://assets.bonappetit.com/photos/59baa8eba428681ad7c44f14/16:9/w_2560%2Cc_limit/lentils.jpg">
+            <img src="./assets/images/lentils.jpg">
             <span class="card-title">
               <h3>Lentils</h3>
             </span>
