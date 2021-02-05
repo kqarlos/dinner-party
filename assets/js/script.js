@@ -11,13 +11,11 @@ $("#enter").on("click", function (e) {
   e.preventDefault();
   var email = $("#email").val().trim();
   email = email.split(" ").join("");
-  // console.log(email);
-  // console.log(savedEmails);
   if (localStorage.getItem("Emails")) {
     //If email in input is already on local storage then don't add it   
     savedEmails = JSON.parse(localStorage.getItem("Emails"));
-    var index = -1;
-    for (var i = 0; i < savedEmails.length; i++) {
+    let index = -1;
+    for (let i = 0; i < savedEmails.length; i++) {
       // id found
       if (savedEmails[i] === email) {
         index = i;
@@ -35,16 +33,8 @@ $("#enter").on("click", function (e) {
   //update savedEmails iten on local storage
   localStorage.setItem("Emails", JSON.stringify(savedEmails));
 
-
-
-
-
-
-
   // savedEmails.push(email);
   // localStorage.setItem("Emails", savedEmails)
-  // console.log(email);
-
 
 
 });
@@ -67,7 +57,7 @@ $('.fixed-action-btn.toolbar').closeToolbar();
 //Scroll fire function to prompt user to select their main ingredient...........
 
 Materialize.scrollFire(options);
-var options = [
+let options = [
   {
     selector: '#staggered-test', offset: 20, callback: function (el) {
       Materialize.showStaggeredList($(el));
