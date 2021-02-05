@@ -15,6 +15,9 @@ $(document).ready(function () {
 
         //clear #features div and create row to be populated
         $("#features").empty();
+
+        $("#features").append('<h3 class="center-align">Select a dish from the list</h3>');
+
         var row = $("<div>");
         row.addClass("row justify-content-center");
         row.attr("id", "choices");
@@ -64,7 +67,14 @@ $(document).ready(function () {
 //Event listener to when a dish selection has been made
 $(document).on("click", ".choices", function () {
     //Clear row
-    $("#choices").empty();
+    $("#features").empty();
+
+    $("#features").append('<h3 class="center-align">Enjoy your dinner party!</h3>');
+
+    var row = $("<div>");
+    row.addClass("row justify-content-center");
+    row.attr("id", "choices");
+    $("#features").append(row);
 
     //Dish number chosen from list
     var number = $(this).attr("data-number");
