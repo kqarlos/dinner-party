@@ -94,7 +94,7 @@ function renderDish(dish) {
     let column = $("<div>");
     column.addClass("col s12 m6");
     let card = $("<div>");
-    card.addClass("choices card z-depth-4");
+    card.addClass("card z-depth-4");
 
     //Create dish card
     card.attr("data-number", dish.dishNumber);
@@ -108,29 +108,34 @@ function renderDish(dish) {
     let titleSpan = $("<span>");
     titleSpan.addClass("card-title");
     let title = $("<h3>");
-    title.text(dish.foodName);
     titleSpan.append(title);
     cardImg.append(img);
     cardImg.append(titleSpan);
-    //setting up button only if dishes are choices => ingredients string is empty
+
+    let recipe = $("<p>");
+    //If no ingredients, dish is part of a choice
     if (dish.ingredients === "") {
+        // Add choice class to attach to an event listener
+        card.addClass("choices");
+        // Add button
         let aTag = $("<a>");
         aTag.addClass("btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse");
         let iTag = $("<i>");
         iTag.addClass("material-icons");
         iTag.text("add");
         aTag.append(iTag);
-        // ----------------------------------------
         cardImg.append(aTag);
+        // Title goes in content 
+        recipe.text(dish.foodName);
+    } else {
+        // If dish is not a choice is final result title goes in header and ingredients go in content
+        title.text(dish.foodName);
+        recipe.text(dish.ingredients);
     }
-    //done setting up image -------------------
 
     //setting up content-----------------------
     let content = $("<div>");
     content.addClass("card-content");
-
-    let recipe = $("<p>");
-    recipe.text(dish.ingredients);
     content.append(recipe);
 
     //done setting up content / Append everythin to row
