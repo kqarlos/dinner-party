@@ -32,20 +32,6 @@ function getDrinkID(callback) {
     });
 }
 
-//Given a drink ID get the cocktail information. Call to render cocktail pnce information is completely retireved
-function getCocktail() {
-
-    //query building to lookup cocktail info
-    let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        let drinkInfo = response.drinks[0];
-        renderCocktail(drinkInfo);
-    });
-}
-
 //render cocktail to html
 function renderCocktail(drinkInfo) {
 

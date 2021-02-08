@@ -1,9 +1,39 @@
-
 var savedEmails = [];
-//Page load event listener for carousel.......................
 
 $(document).ready(function () {
+  //-------------------Set Up materialize elements-------------------------
   $('.slider').slider();
+  //Page load event listener for carousel.......................
+  //Slider methods controling each slider class..................
+  // Pause slider
+  $('.slider').slider('start');
+  // Next slide
+  $('.slider').slider('next');
+  // Previous slide
+  $('.slider').slider('prev');
+  //Methods for tunring the fixed menu on and off................
+  $('.fixed-action-btn').openFAB();
+  $('.fixed-action-btn').closeFAB();
+  $('.fixed-action-btn.toolbar').openToolbar();
+  $('.fixed-action-btn.toolbar').closeToolbar();
+  //Scroll fire function to prompt user to select their main ingredient...........
+  Materialize.scrollFire(options);
+  let options = [
+    {
+      selector: '#staggered-test', offset: 20, callback: function (el) {
+        Materialize.showStaggeredList($(el));
+      }
+    },
+    {
+      selector: '#image-test', offset: 500, callback: function (el) {
+        Materialize.fadeInImage($(el));
+      }
+    }
+  ];
+  Materialize.scrollFire(options);
+  //Keep this at the Bottom. This initializes any built in materialize js that we set in place.............
+  M.AutoInit();
+
 });
 
 //Saves email information to local storage
@@ -32,50 +62,104 @@ $("#enter").on("click", function (e) {
   }
   //update savedEmails iten on local storage
   localStorage.setItem("Emails", JSON.stringify(savedEmails));
+});
 
-  // savedEmails.push(email);
-  // localStorage.setItem("Emails", savedEmails)
+// When they click a protein
+$(".protein").click(function () {
+
+  //set main ingredient
+  mainIng = $(this).attr("id");
+
+  //set spirit for cocktail based on main ingredient
+  spirit = getSpirit(mainIng);
+
+  //clear #mainContent div and create row to be populated
+  $("#mainContent").empty();
+  $("#mainContent").append('<h3 class="center-align">Select a dish from the list</h3>');
+  let row = $("<div>");
+  row.addClass("row justify-content-center");
+  row.attr("id", "choices");
+  $("#mainContent").append(row);
+
+  //Preparing query for food dishes based on mainIng
+  let queryURL = "https://api.edamam.com/search?q=" + mainIng + "&app_id=a9502a10&app_key=38e9596cea1782797a3e09245c9370fb&from=0&to=100";
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
+    //Generate random numbers to use as indexes from query result. response.hits = response array
+    let randomNo = [];
+    for (let i = 0; i < 6; i++) {
+      let random = Math.floor(Math.random() * response.hits.length);
+      if (!randomNo.includes(random)) {
+        randomNo.push(random);
+      }
+      else {
+        i--;
+      }
+    }
+    //Get dishes using random number and get their information
+    for (let i = 0; randomNo.length; i++) {
+      let dish = {
+        foodImg: response.hits[randomNo[i]].recipe.image,
+        foodName: response.hits[randomNo[i]].recipe.label,
+        ingredients: "",
+        dishNumber: randomNo[i]
+      }
+      renderDish(dish);
+    }
+
+
+  });
 
 
 });
 
 
-//Slider methods controling each slider class..................
-// Pause slider
-$('.slider').slider('start');
-// Next slide
-$('.slider').slider('next');
-// Previous slide
-$('.slider').slider('prev');
+//Event listener to when a dish selection has been made
+$(document).on("click", ".choices", function () {
+  //Clear row
+  $("#mainContent").empty();
 
-//Methods for tunring the fixed menu on and off................
-$('.fixed-action-btn').openFAB();
-$('.fixed-action-btn').closeFAB();
-$('.fixed-action-btn.toolbar').openToolbar();
-$('.fixed-action-btn.toolbar').closeToolbar();
+  $("#mainContent").append('<h3 class="center-align">Enjoy your dinner party!</h3>');
 
-//Scroll fire function to prompt user to select their main ingredient...........
+  let row = $("<div>");
+  row.addClass("row justify-content-center");
+  row.attr("id", "choices");
+  $("#mainContent").append(row);
 
-Materialize.scrollFire(options);
-let options = [
-  {
-    selector: '#staggered-test', offset: 20, callback: function (el) {
-      Materialize.showStaggeredList($(el));
-    }
-  },
-  {
-    selector: '#image-test', offset: 500, callback: function (el) {
-      Materialize.fadeInImage($(el));
-    }
-  }
-];
-Materialize.scrollFire(options);
+  //Dish number chosen from list
+  let dishNumber = $(this).attr("data-number");
 
+  // --------------------------------------ADD FOOD CARD---------------------
+  let queryURL = "https://api.edamam.com/search?q=" + mainIng + "&app_id=a9502a10&app_key=38e9596cea1782797a3e09245c9370fb&from=0&to=100";
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+  }).then(function (response) {
+      let dish = {
+          foodImg: response.hits[dishNumber].recipe.image,
+          foodName: response.hits[dishNumber].recipe.label,
+          ingredients: response.hits[dishNumber].recipe.ingredientLines,
+          dishNumber: dishNumber
+      }
+      renderDish(dish);
+  });
 
+  //Call to cocktail.js to query and generate cocktail
+  getDrinkID(getCocktail);
+});
 
+//Given a drink ID get the cocktail information. Call to render cocktail pnce information is completely retireved
+function getCocktail() {
 
-
-//Keep this at the Bottom. This initializes any built in materialize js that we set in place.............
-M.AutoInit();
-
-
+  //query building to lookup cocktail info
+  let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
+  $.ajax({
+      url: queryURL,
+      method: "GET"
+  }).then(function (response) {
+      let drinkInfo = response.drinks[0];
+      renderCocktail(drinkInfo);
+  });
+}
