@@ -18,7 +18,7 @@ function getSpirit(protein) {
     return spirit;
 }
 
-//get drinkId based on spirit and API. Unpon completion call callback function
+//get drinkId based on spirit and API.
 function getDrinkID() {
     return new Promise((resolve, reject) => {
         //building query to get a drink
@@ -36,7 +36,7 @@ function getDrinkID() {
 
 }
 
-//Given a drink ID get the cocktail information. Call to render cocktail pnce information is completely retireved
+//Given a drink ID get the cocktail information.
 function getCocktail(drinkID) {
     return new Promise((resolve, reject) => {
         //query building to lookup cocktail info

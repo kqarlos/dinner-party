@@ -37,7 +37,7 @@ This application is compatible with the most commonly used web browsers.
 
 
 ## Demo
-![Site](./assets/images/siteDemo.webp)
+![Site](./assets/images/demo1.gif)
 
 ## Implementation
 
@@ -78,42 +78,39 @@ var column = $("<div>");
 column.addClass("col s12");
 ```
 
-![site](./assets/images/responsiveDemo.webp)
+![site](./assets/images/responsiveDemo.gif)
 
 ## API Call 
 Querying the information from the The Cocktail DB was done in two steps . First we get the drink ID based on spirit. Second we are parsing out the cocktail informaton that we will need for that particular spirit. 
 ```js
-//get drinkId based on spirit and API. Unpon completion call callback function
-function getDrinkID(callback) {
-    //building query to get a drink
-    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + spirit;
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log("Drink query: " + queryURL);
-        console.log(response);
-        var randomDrink = Math.floor(Math.random() * response.drinks.length);
-        drinkID = response.drinks[randomDrink].idDrink;
-        console.log("drinkID: " + drinkID);
-        callback();
+//get drinkId based on spirit and API
+function getDrinkID() {
+    return new Promise((resolve, reject) => {
+        //building query to get a drink
+        let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + spirit;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            let randomDrink = Math.floor(Math.random() * response.drinks.length);
+            drinkID = response.drinks[randomDrink].idDrink;
+            resolve(drinkID);
+        });
     });
 }
 
-//Given a drink ID get the cocktail information. Call to render cocktail pnce information is completely retireved
-function getCocktail() {
-
-    //query building to lookup cocktail info
-    var queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log("Get cocktail based ID query: " + queryURL);
-        console.log(response);
-
-        var drinkInfo = response.drinks[0];
-        renderCocktail(drinkInfo);
+//Given a drink ID get the cocktail information.
+function getCocktail(drinkID) {
+    return new Promise((resolve, reject) => {
+        //query building to lookup cocktail info
+        let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            let drinkInfo = response.drinks[0];
+            resolve(drinkInfo);
+        });
     });
 }
 
@@ -200,8 +197,8 @@ function renderCocktail(drinkInfo) {
     
 <p align="center">
     <a href="https://developer.edamam.com/"><img src="https://img.shields.io/badge/-Moment.js-success?style=for-the-badge" alt="EDAMAM API" /></a>
-    <a href="https://www.thecocktaildb.com/api.php"><img src="https://img.shields.io/badge/-Open Weather API-success?style=for-the-badge" alt="The Cocktail DB API" /></a>
-    <a href="http://archives.materializecss.com/0.100.2/about.html"><img src="https://img.shields.io/badge/-Open Weather API-success?style=for-the-badge" alt="Materialize CSS" /></a>
+    <a href="https://www.thecocktaildb.com/api.php"><img src="https://img.shields.io/badge/-Open Weather API-yellow?style=for-the-badge" alt="The Cocktail DB API" /></a>
+    <a href="http://archives.materializecss.com/0.100.2/about.html"><img src="https://img.shields.io/badge/-Materialize CSS-success?style=for-the-badge" alt="Materialize CSS" /></a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/-HTML-orange?style=for-the-badge"  alt="HMTL" /></a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/-CSS-blue?style=for-the-badge" alt="CSS" /></a>
     <a href="https://www.javascript.com/"><img src="https://img.shields.io/badge/-Javascript-yellow?style=for-the-badge" alt="Javascript" /></a>
