@@ -82,9 +82,6 @@ $(".protein").click(function () {
   //set spirit for cocktail based on main ingredient
   spirit = getSpirit(mainIng);
 
-  //clear #mainContent div and create row to be populated
-  clearContent("Select a dish from the list")
-
   //Preparing query for food dishes based on mainIng
   let queryURL = "https://api.edamam.com/search?q=" + mainIng + "&app_id=a9502a10&app_key=38e9596cea1782797a3e09245c9370fb&from=0&to=100";
   $.ajax({
@@ -102,6 +99,7 @@ $(".protein").click(function () {
         i--;
       }
     }
+    clearContent("Select a dish from the list")
     //Get dishes using random number and get their information
     for (let i = 0; randomNo.length; i++) {
       let dish = {
@@ -110,6 +108,7 @@ $(".protein").click(function () {
         ingredients: "",
         dishNumber: randomNo[i]
       }
+      //clear #mainContent div
       renderDish(dish);
     }
   });
@@ -118,9 +117,7 @@ $(".protein").click(function () {
 
 //Event listener to when a dish selection has been made
 $(document).on("click", ".choices", function () {
-  //Clear row
-  clearContent("Enjoy your dinner party!");
-  
+
   //Dish number chosen from list
   let dishNumber = $(this).attr("data-number");
 
@@ -136,14 +133,13 @@ $(document).on("click", ".choices", function () {
       ingredients: response.hits[dishNumber].recipe.ingredientLines,
       dishNumber: dishNumber
     }
+    clearContent("Enjoy your dinner party!");
     renderDish(dish);
-  });
-
-  //Call to cocktail.js to query and generate cocktail
-  getDrinkID().then((drinkId) => {
-    getCocktail(drinkId).then((cocktail) => {
-      renderCocktail(cocktail)
+    //Call to cocktail.js to query and generate cocktail
+    getDrinkID().then((drinkId) => {
+      getCocktail(drinkId).then((cocktail) => {
+        renderCocktail(cocktail)
+      });
     });
   });
-  // getDrinkID(getCocktail);
 });

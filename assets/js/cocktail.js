@@ -112,5 +112,6 @@ function renderCocktail(drinkInfo) {
     card.append(cardImg);
     card.append(content);
     column.append(card);
+    console.log("INFO", column, $("#choices"));
     $("#choices").append(column);
 }

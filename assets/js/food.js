@@ -4,11 +4,9 @@ var mainIng = "";
 function renderDish(dish) {
     //setting up column and cards to add to the row
     let column = $("<div>");
-    column.addClass("col s12 m6");
-    let card = $("<div>");
-    card.addClass("card z-depth-4");
-
     //Create dish card
+    let card = $("<div>");
+    card.addClass("card hoverable z-depth-4");
     card.attr("data-number", dish.dishNumber);
 
     //set up image with title and button---------
@@ -27,6 +25,9 @@ function renderDish(dish) {
     let recipe = $("<p>");
     //If no ingredients, dish is part of a choice
     if (!dish.ingredients) {
+        //Choices is 3x2 at l
+        column.addClass("col s12 m6 l4");
+
         // Add choice class to attach to an event listener
         card.addClass("choices");
         // Add button
@@ -41,6 +42,7 @@ function renderDish(dish) {
         recipe.text(dish.foodName);
     } else {
         // If dish is not a choice is final result title goes in header and ingredients go in content
+        column.addClass("col s12 m6 l6");
         title.text(dish.foodName);
         recipe.text(dish.ingredients);
     }
