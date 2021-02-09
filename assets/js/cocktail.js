@@ -1,5 +1,5 @@
 var spirit;
-var drinkID;
+// var drinkID;
 
 //based on a given protein figure out a spirit that pairs
 function getSpirit(protein) {
@@ -19,17 +19,37 @@ function getSpirit(protein) {
 }
 
 //get drinkId based on spirit and API. Unpon completion call callback function
-function getDrinkID(callback) {
-    //building query to get a drink
-    let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + spirit;
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        let randomDrink = Math.floor(Math.random() * response.drinks.length);
-        drinkID = response.drinks[randomDrink].idDrink;
-        callback();
+function getDrinkID() {
+    return new Promise((resolve, reject) => {
+        //building query to get a drink
+        let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + spirit;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            let randomDrink = Math.floor(Math.random() * response.drinks.length);
+            drinkID = response.drinks[randomDrink].idDrink;
+            resolve(drinkID);
+        });
+
     });
+
+}
+
+//Given a drink ID get the cocktail information. Call to render cocktail pnce information is completely retireved
+function getCocktail(drinkID) {
+    return new Promise((resolve, reject) => {
+        //query building to lookup cocktail info
+        let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then(function (response) {
+            let drinkInfo = response.drinks[0];
+            resolve(drinkInfo);
+        });
+    });
+
 }
 
 //render cocktail to html

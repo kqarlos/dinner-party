@@ -36,6 +36,15 @@ $(document).ready(function () {
 
 });
 
+function clearContent(message) {
+  $("#mainContent").empty();
+  $("#mainContent").append(`<h3 class="center-align">${message}</h3>`);
+  let row = $("<div>");
+  row.addClass("row justify-content-center");
+  row.attr("id", "choices");
+  $("#mainContent").append(row);
+}
+
 //Saves email information to local storage
 $("#enter").on("click", function (e) {
   e.preventDefault();
@@ -74,12 +83,7 @@ $(".protein").click(function () {
   spirit = getSpirit(mainIng);
 
   //clear #mainContent div and create row to be populated
-  $("#mainContent").empty();
-  $("#mainContent").append('<h3 class="center-align">Select a dish from the list</h3>');
-  let row = $("<div>");
-  row.addClass("row justify-content-center");
-  row.attr("id", "choices");
-  $("#mainContent").append(row);
+  clearContent("Select a dish from the list")
 
   //Preparing query for food dishes based on mainIng
   let queryURL = "https://api.edamam.com/search?q=" + mainIng + "&app_id=a9502a10&app_key=38e9596cea1782797a3e09245c9370fb&from=0&to=100";
@@ -108,58 +112,38 @@ $(".protein").click(function () {
       }
       renderDish(dish);
     }
-
-
   });
-
-
 });
 
 
 //Event listener to when a dish selection has been made
 $(document).on("click", ".choices", function () {
   //Clear row
-  $("#mainContent").empty();
-
-  $("#mainContent").append('<h3 class="center-align">Enjoy your dinner party!</h3>');
-
-  let row = $("<div>");
-  row.addClass("row justify-content-center");
-  row.attr("id", "choices");
-  $("#mainContent").append(row);
-
+  clearContent("Enjoy your dinner party!");
+  
   //Dish number chosen from list
   let dishNumber = $(this).attr("data-number");
 
   // --------------------------------------ADD FOOD CARD---------------------
   let queryURL = "https://api.edamam.com/search?q=" + mainIng + "&app_id=a9502a10&app_key=38e9596cea1782797a3e09245c9370fb&from=0&to=100";
   $.ajax({
-      url: queryURL,
-      method: "GET"
+    url: queryURL,
+    method: "GET"
   }).then(function (response) {
-      let dish = {
-          foodImg: response.hits[dishNumber].recipe.image,
-          foodName: response.hits[dishNumber].recipe.label,
-          ingredients: response.hits[dishNumber].recipe.ingredientLines,
-          dishNumber: dishNumber
-      }
-      renderDish(dish);
+    let dish = {
+      foodImg: response.hits[dishNumber].recipe.image,
+      foodName: response.hits[dishNumber].recipe.label,
+      ingredients: response.hits[dishNumber].recipe.ingredientLines,
+      dishNumber: dishNumber
+    }
+    renderDish(dish);
   });
 
   //Call to cocktail.js to query and generate cocktail
-  getDrinkID(getCocktail);
-});
-
-//Given a drink ID get the cocktail information. Call to render cocktail pnce information is completely retireved
-function getCocktail() {
-
-  //query building to lookup cocktail info
-  let queryURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drinkID;
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-  }).then(function (response) {
-      let drinkInfo = response.drinks[0];
-      renderCocktail(drinkInfo);
+  getDrinkID().then((drinkId) => {
+    getCocktail(drinkId).then((cocktail) => {
+      renderCocktail(cocktail)
+    });
   });
-}
+  // getDrinkID(getCocktail);
+});
