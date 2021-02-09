@@ -6,7 +6,7 @@ function renderDish(dish) {
     let column = $("<div>");
     //Create dish card
     let card = $("<div>");
-    card.addClass("card hoverable z-depth-4");
+    card.addClass("card z-depth-4");
     card.attr("data-number", dish.dishNumber);
 
     //set up image with title and button---------
@@ -27,9 +27,8 @@ function renderDish(dish) {
     if (!dish.ingredients) {
         //Choices is 3x2 at l
         column.addClass("col s12 m6 l4");
-
         // Add choice class to attach to an event listener
-        card.addClass("choices");
+        card.addClass("hoverable choices");
         // Add button
         let aTag = $("<a>");
         aTag.addClass("btn-floating btn-large btn waves-effect waves-red  halfway-fab cyan pulse");
