@@ -82,8 +82,13 @@ function renderCocktail(drinkInfo) {
     content.addClass("card-content");
 
     //Recipe and ingredients ---------
-    let ingredientList = $("<ol>");
-    ingredientList.text("Ingredients");
+    let ingredientH = $("<h4>");
+    ingredientH.text("Ingredients:");
+    content.append(ingredientH);
+
+    let ingredient = $("<p>");
+    ingredient.text(`${1}. ${drinkInfo.strGlass}`);
+    content.append(ingredient);
 
     for (let i = 1; i <= 15; i++) {
 
@@ -93,20 +98,21 @@ function renderCocktail(drinkInfo) {
         if (!measure)
             measure = "";
         if (name) {
-            let ingredient = $("<li>");
-            ingredient.text(measure + " " + name);
-            ingredientList.append(ingredient);
+            let ingredient = $("<p>");
+            ingredient.text(`${i + 1}. ${measure} ${name}`);
+            content.append(ingredient);
         }
     }
 
-    let ingredient = $("<li>");
-    ingredient.text(drinkInfo.strGlass);
-    ingredientList.append(ingredient);
+    let recipeH = $("<h4>");
+    recipeH.text("Recipe:");
     let recipe = $("<p>");
-    recipe.text("Recipe: " + drinkInfo.strInstructions);
+    recipe.text(drinkInfo.strInstructions);
 
-    content.append(ingredientList);
+    content.append(recipeH);
     content.append(recipe);
+
+
     //done setting up content / append to card
 
     card.append(cardImg);

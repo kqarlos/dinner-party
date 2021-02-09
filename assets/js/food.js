@@ -43,7 +43,13 @@ function renderDish(dish) {
         // If dish is not a choice is final result title goes in header and ingredients go in content
         column.addClass("col s12 m6 l6");
         title.text(dish.foodName);
-        recipe.text(dish.ingredients);
+        let header = $("<h4>").text("Ingredients:");
+        recipe.append(header);
+        for (let i = 0; i < dish.ingredients.length; i++){
+            let ingredient = $("<p>");
+            ingredient.text(`${i + 1}. ${dish.ingredients[i]}`)
+            recipe.append(ingredient);
+        }
     }
 
     //setting up content-----------------------
